@@ -1,0 +1,109 @@
+/* Contribute.css */
+
+.contribute {
+    display: flex; /* Flexbox for sidebar and content layout */
+    max-width: 1200px; /* Set a max width for the whole component */
+    margin: 0 auto; /* Center the component */
+    padding: 0px; /* Padding for overall spacing */
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  .sidebar {
+    width: 250px; /* Width of the sidebar */
+    background: linear-gradient(135deg, #232526 0%, #414345 100%); /* Sidebar background */
+    color: white; /* Sidebar text color */
+    padding: 20px; /* Added padding for better spacing */
+    border-radius: 40px; /* Rounded corners */
+    margin-right: 20px; /* Space between sidebar and content */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.sidebar ul {
+    list-style-type: none; /* Remove list style */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.sidebar li {
+    margin: 15px 0; /* Margin between items */
+    cursor: pointer; /* Pointer cursor for hover effect */
+    display: flex; /* Flexbox for icon and text alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    width: 100%; /* Make items full width for better click area */
+    transition: color 0.3s; /* Smooth transition on hover */
+}
+
+.sidebar li:hover {
+    color: #FFD700; /* Change color on hover */
+}
+
+.sidebar li svg {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+  .content {
+    flex-grow: 1; /* Allow content area to grow */
+    padding: 20px; /* Padding for content area */
+    border-radius: 5px; /* Rounded corners for content */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  .content h1 {
+    text-align: center; /* Center align heading */
+    margin-bottom: 20px; /* Space below heading */
+    color: #ffffff; /* Heading color */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Space below form groups */
+  }
+  
+  .form-group label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below label */
+    font-weight: bold; /* Bold text */
+    color: #ffffff; /* Label color */
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding for inputs */
+    font-size: 1rem; /* Font size */
+    border: 1px solid #000000; /* Border color */
+    border-radius: 40px; /* Rounded corners */
+    transition: border-color 0.3s; /* Smooth border color transition */
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #FFD700; /* Change border color on focus */
+  }
+  
+  .form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    height: 100px; /* Height for textarea */
+  }
+  
+  button {
+    display: block; /* Block display */
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding */
+    background: linear-gradient(135deg, #FFD700 0%, #FF7E5F 100%); /* Gradient background */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth background color and shadow transition */
+  }
+  
+  /* Glowing effect on hover */
+  button:hover {
+    background: linear-gradient(135deg, #FF7E5F 0%, #FFD700 100%); /* Change button color on hover */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.6); /* Glow effect */
+  }
+  

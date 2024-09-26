@@ -1,0 +1,35 @@
+/* imageSlider.css */
+
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    background-color: #000; 
+  }
+  
+  .slide {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+  
+  .slide.active {
+    display: block;
+
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for transform and opacity */
+    transform: scale(3); /* Initial scale */
+    opacity: 1; /* Initial opacity */
+}
+
+.slide-image:hover {
+    transform: scale(2); /* Slightly scale up on hover */
+    opacity: 0.8; /* Slightly fade out on hover */
+}
+  

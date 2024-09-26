@@ -1,0 +1,124 @@
+/* Join.css */
+
+/* Import a web font (e.g., Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  background: linear-gradient(to right, #232526, #414345); /* Gradient background for the page */
+  font-family: 'Roboto', sans-serif; /* Use the imported font */
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto; /* Center the form in the viewport */
+  padding: 40px; /* Reduced padding for a cleaner look */
+  background: rgba(34, 34, 34, 0.9); /* Semi-transparent dark background */
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for depth */
+  animation: slideIn 0.5s ease-out; /* Animation for the form appearance */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center-align children horizontally */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.form-group {
+  width: 100%; /* Full width for form groups */
+  margin-bottom: 20px; /* Increased spacing between form groups */
+  display: flex; /* Use flexbox to center input elements */
+  flex-direction: column; /* Stack label and input vertically */
+  align-items: center; /* Center-align children */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #f9f9f9; /* Lighter color for labels */
+  font-size: 18px; /* Increased font size for better readability */
+  transition: color 0.3s; /* Transition for label color */
+}
+
+label:hover {
+  color: #ff6f61; /* Change color on hover for interactivity */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+  width: 90%; /* Adjusted width for better alignment */
+  max-width: 400px; /* Maximum width to keep inputs from getting too wide */
+  padding: 12px; /* Increased padding for comfort */
+  border: none; /* Removed border for a cleaner look */
+  border-radius: 6px; /* More rounded corners */
+  background-color: #444; /* Darker background color */
+  color: #fff; /* White text color */
+  font-size: 16px; /* Consistent font size */
+  transition: background-color 0.3s, transform 0.2s; /* Transitions for interaction */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus {
+  background-color: #555; /* Slightly lighter background on focus */
+  transform: scale(1.02); /* Slight scale on focus */
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+select option {
+  color: #bbb; /* Placeholder and option text color */
+}
+
+button {
+  background-color: #ff6f61; /* Funky color theme */
+  color: #fff;
+  padding: 12px 24px; /* Slightly larger button for better clickability */
+  border: none;
+  border-radius: 6px; /* More rounded corners */
+  cursor: pointer;
+  font-size: 18px; /* Larger font size for the button */
+  font-weight: bold; /* Bold text for emphasis */
+  transition: background-color 0.3s, transform 0.3s; /* Add a transform transition */
+  width: 90%; /* Match button width to input fields */
+  max-width: 400px; /* Maximum width to keep buttons aligned */
+}
+
+button:hover {
+  background-color: #ff3d3d; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Animation for buttons on load */
+button {
+  animation: popIn 0.5s ease-out forwards; /* Add pop-in animation */
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

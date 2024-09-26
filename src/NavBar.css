@@ -1,0 +1,52 @@
+/* NavBar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  border-radius: 50px;
+  margin: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 60px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  filter: invert(1); /* Inverts the colors to create a negative effect */
+}
+
+.navbar-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  background: linear-gradient(135deg, #FFD700 0%, #FF7E5F 100%);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
