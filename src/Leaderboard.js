@@ -35,6 +35,7 @@ function Leaderboard() {
       <table>
         <thead>
           <tr>
+            <th>S. No.</th> {/* Add Serial Number Column */}
             <th>Username</th>
             <th>Total Points</th>
           </tr>
@@ -43,13 +44,14 @@ function Leaderboard() {
           {leaderboardData.length > 0 ? (
             leaderboardData.map((user, index) => (
               <tr key={index}>
+                <td>{index + 1}</td> {/* Serial number is index + 1 */}
                 <td>{user.username}</td>
                 <td>{user.totalPoints}</td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="2">No data available</td>
+              <td colSpan="3">No data available</td> {/* Update colSpan to 3 to account for the extra column */}
             </tr>
           )}
         </tbody>

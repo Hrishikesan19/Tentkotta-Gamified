@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './Login.css'; // Import the CSS file
-
 
 function Login() {
   const navigate = useNavigate();
@@ -29,7 +27,7 @@ function Login() {
       const data = await response.text();
 
       if (data === "authenticated") {
-        navigate("/contribute", { state: { username } });  // Navigating to '/contribute' page with username as state
+        navigate("/contribute", { state: { username } });
       } else {
         setError("Invalid username or password");
       }

@@ -65,26 +65,31 @@ const transporter = nodemailer.createTransport({
 
 // Route for user login
 app.post('/login', async (req, res) => {
-  try {
-    const { username, password } = req.body;
-    const user = await UserModel.findOne({ username });
-
-    if (!user) {
-      return res.status(401).send("notauthenticated");
+    try {
+      const { username, password } = req.body;
+      console.log(`Login attempt for username: ${username}`); // Logging the username
+  
+      const user = await UserModel.findOne({ username });
+  
+      if (!user) {
+        console.log(`User not found: ${username}`);
+        return res.status(401).send("notauthenticated");
+      }
+  
+      const isValidPassword = await user.comparePassword(password);
+      if (!isValidPassword) {
+        console.log(`Invalid password for user: ${username}`);
+        return res.status(401).send("notauthenticated");
+      }
+  
+      console.log(`User authenticated: ${username}`);
+      res.send("authenticated");
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Internal Server Error");
     }
-
-    const isValidPassword = await user.comparePassword(password);
-    if (!isValidPassword) {
-      return res.status(401).send("notauthenticated");
-    }
-
-    res.send("authenticated");
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Internal Server Error");
-  }
-});
-
+  });
+  
 // Route for user registration
 app.post('/join', async (req, res) => {
   try {

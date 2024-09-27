@@ -1,46 +1,45 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
+import { useLocation, useNavigate } from "react-router-dom";
 import './Contribute.css';
-import { FaUser, FaHome, FaCog, FaBell, FaQuestionCircle } from 'react-icons/fa'; // Using Font Awesome icons
+import { FaUser, FaHome, FaCog, FaBell, FaQuestionCircle } from 'react-icons/fa';
 
 function Contribute() {
   const location = useLocation();
-  const navigate = useNavigate(); // Initialize navigate
-  const [username, setUsername] = useState("Guest"); // Initialize state for username
-  const [contributionText, setContributionText] = useState(""); // State to hold contribution text
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [contributionText, setContributionText] = useState("");
 
   useEffect(() => {
-    // Retrieve username from local storage if it exists
-    const storedUsername = localStorage.getItem("username");
-    if (storedUsername) {
-      setUsername(storedUsername);
+    const { username: locUsername } = location.state || {};
+    if (locUsername) {
+      setUsername(locUsername);
+      localStorage.setItem("username", locUsername);
     } else {
-      const { username: locUsername } = location.state || {};
-      if (locUsername) {
-        setUsername(locUsername);
-        localStorage.setItem("username", locUsername); // Store in local storage
+      const storedUsername = localStorage.getItem("username");
+      if (storedUsername) {
+        setUsername(storedUsername);
+      } else {
+        navigate("/login");
       }
     }
-  }, [location]);
+  }, [location, navigate]);
 
-  // Handle click for FaUser icon to navigate to leaderboard
   const handleUserClick = () => {
-    navigate('/leaderboard', { state: { username } }); // Navigates to leaderboard page
+    navigate('/leaderboard', { state: { username } });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault();
 
     try {
-      const response = await fetch('/contribute', {
+      const response = await fetch('http://localhost:3000/contribute', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username, // Pass the username
-          contributionText, // Pass the contribution text
+          username,
+          contributionText,
         }),
       });
 
@@ -49,8 +48,8 @@ function Contribute() {
       }
 
       const result = await response.text();
-      console.log(result); // Handle success response
-      setContributionText(""); // Clear the textarea after submission
+      console.log(result);
+      setContributionText("");
     } catch (error) {
       console.error("Error submitting contribution:", error);
     }
@@ -60,7 +59,7 @@ function Contribute() {
     <div className="contribute">
       <div className="sidebar">
         <ul>
-          <li onClick={handleUserClick}><FaUser /></li> {/* Add onClick event */}
+          <li onClick={handleUserClick}><FaUser /></li>
           <li><FaHome /></li>
           <li><FaCog /></li>
           <li><FaBell /></li>
@@ -70,7 +69,7 @@ function Contribute() {
       <div className="content">
         <h1>Welcome, {username}!</h1>
         <p>This is the Contribute page.</p>
-        <form onSubmit={handleSubmit}> {/* Add onSubmit handler */}
+        <form onSubmit={handleSubmit}>
           <textarea 
             value={contributionText} 
             onChange={(e) => setContributionText(e.target.value)} 
