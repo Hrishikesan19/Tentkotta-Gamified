@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+Here's the updated `README.md` with your future enhancements:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# Tentkotta Club App - Gamified Experience
 
-In the project directory, you can run:
+This is a **MERN (MongoDB, Express, React, Node)** gamified application built for **Tentkotta**. The app offers club members an interactive experience, where they can register, log in, verify emails, and contribute to club activities to earn points and climb the leaderboard.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Gamified Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Registration**: Members create accounts to access the platform.
+- **Email Verification**: New users receive a verification email via Nodemailer to confirm their accounts.
+- **User Login**: Secure access for registered users to track their progress.
+- **Contribution Tracking & Rewards**: Members log contributions, which are stored in a database collection, with each contribution granting 2 points.
+- **Leaderboard**: A competitive leaderboard displays members based on their accumulated points.
 
-### `npm test`
+## Project Status
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🚧 **Currently in Development** 🚧
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running the App Locally
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To set up the project on your local machine:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Hrishikesan19/Tentkotta-Gamified.git
+   cd Tentkotta-Gamified
+   ```
 
-### `npm run eject`
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Set up environment variables**:
+   - **Database URI** for MongoDB
+   - **Nodemailer credentials** for email verification
+   - **JWT Secret** for user authentication
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to start exploring the app.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **MongoDB** for storing user and contribution data.
+- **Express.js** for server-side handling.
+- **React** for building an interactive UI.
+- **Node.js** as the backend runtime.
+- **Nodemailer** for email verification.
+  
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Enhancements
 
-### Code Splitting
+- **New Routes**: 
+  - **Works Route**: Display a gallery or list of the club’s work and activities.
+  - **Officebearers Route**: Show current office bearers with their respective roles.
+  
+- **Social Sharing**: Allow users to share achievements on social media when they reach certain points milestones, increasing engagement and visibility.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Created by Hrishikesan, Tentkotta Club
