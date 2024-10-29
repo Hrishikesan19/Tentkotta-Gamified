@@ -1,7 +1,3 @@
-Here's the updated `README.md` with your future enhancements:
-
----
-
 # Tentkotta Club App - Gamified Experience
 
 This is a **MERN (MongoDB, Express, React, Node)** gamified application built for **Tentkotta**. The app offers club members an interactive experience, where they can register, log in, verify emails, and contribute to club activities to earn points and climb the leaderboard.
